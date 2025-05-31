@@ -25,7 +25,7 @@ screen = curses.initscr()
 time_displaying = True
 while time_displaying:
     try:
-       screen.clear()
+       screen.refresh
        current_time = get_time()
        console_size = terminal_size()
        x, y = console_size[0] // 2 - 4, console_size[1] // 2
@@ -34,4 +34,5 @@ while time_displaying:
     except KeyboardInterrupt:
         curses.endwin()
         time_displaying = False
+cursor.show()
 sys.exit(0)
